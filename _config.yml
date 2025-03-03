@@ -3,12 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo Blog
-subtitle: 'Hexo demo'
-description: 'demo'
-keywords: 
-author: 19JO
-language: zh
+title: 19JO Blog
+subtitle: "19JO's blog"
+description: 'A not good enough EECSer'
+keywords: key1 key2 key3
+author: MAO
+# language: zh-CN
+language: en
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -96,7 +97,10 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+
+# theme: async
+theme: next
+# theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
