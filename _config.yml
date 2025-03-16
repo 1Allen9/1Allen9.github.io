@@ -104,4 +104,4 @@ deploy:
   type: git
   repo: https://github.com/1Allen9/1Allen9.github.io
   branch: main
-  message: {{ now('YYYY-MM-DD HH:mm:ss') }}
+  # message: {{ now('YYYY-MM-DD HH:mm:ss') }}
