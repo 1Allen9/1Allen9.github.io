@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python-doctest | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="python测试工具——doctestbrief introductiondoctest是python自带的一个调试测试工具，可用于初步检测你写的python程序的输入与输出结果是否符合你的预期通过在自己写的函数内，按照规定的格式写上你想要对比的输入输出结果，再使用python3 -m doctest example.py(example.py是你要test的python程序)，python会自动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-doctest">
+<meta property="og:url" content="https://1allen9.github.io/2025/03/16/python-doctest/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="python测试工具——doctestbrief introductiondoctest是python自带的一个调试测试工具，可用于初步检测你写的python程序的输入与输出结果是否符合你的预期通过在自己写的函数内，按照规定的格式写上你想要对比的输入输出结果，再使用python3 -m doctest example.py(example.py是你要test的python程序)，python会自动">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-16T10:38:01.000Z">
+<meta property="article:modified_time" content="2025-03-16T11:34:50.874Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python, doctest">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://1Allen9.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python-doctest" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/16/python-doctest/" class="article-date">
+  <time class="dt-published" datetime="2025-03-16T10:38:01.000Z" itemprop="datePublished">2025-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python-doctest
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="python测试工具——doctest"><a href="#python测试工具——doctest" class="headerlink" title="python测试工具——doctest"></a>python测试工具——doctest</h1><h2 id="brief-introduction"><a href="#brief-introduction" class="headerlink" title="brief introduction"></a>brief introduction</h2><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/doctest.html">doctest</a>是python自带的一个调试测试工具，可用于初步检测你写的python程序的输入与输出结果是否符合你的预期<br>通过在自己写的函数内，按照规定的格式写上你想要对比的输入输出结果，再使用<code>python3 -m doctest example.py</code>(example.py是你要test的python程序)，python会自动帮你用你的输入和你写的程序能否得到你给定的输出</p>
+<blockquote>
+<p>   python3是linux里运行python的指令<br>    在Windows中应该是python -m doctest example.py</p>
+</blockquote>
+<blockquote>
+<p>   注：本次测试实验我是在linux系统上测试的，可能与windows操作的情况略有不同，如有操作和你的系统不太一样，可尝试搜索windows系统的操作方法</p>
+</blockquote>
+<p>下面演示一个最直接简单的用法</p>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><p>我们写一个简单的3个数求和的python函数，这里我的python文件名是pydoctest.py</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_three_num</span>(<span class="params">a, b, c</span>):</span><br><span class="line">    <span class="keyword">return</span> (a + b + c)</span><br></pre></td></tr></table></figure>
+<p>现在python运行一下，看看python显示的样子<br>可以使用python交互式运行指令<code>python3 -i pydoctest.py</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -i pydoctest.py </span><br><span class="line">&gt;&gt;&gt; add_three_num(1,1,1)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; add_three_num(2,2,2)</span><br><span class="line">6</span><br><span class="line">&gt;&gt;&gt; add_three_num(1,2,3)</span><br><span class="line">6</span><br><span class="line">&gt;&gt;&gt; </span><br></pre></td></tr></table></figure>
+<p>注意python IDE或者你的cli界面的显示样式：<code>&gt;&gt;&gt;</code>后有一个空格，直接return的结果前面没有空格，python交互界面显示的样子，就是你要写给doctest的样子，要完全一致，doctest会匹配检查每个字符，只要有一个字符不一致就判定为fail</p>
+<p>现在参考<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/doctest.html">doctest</a>文档，在函数内写上你想测试的内容</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_three_num</span>(<span class="params">a, b, c</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three_num(1,2,3)</span></span><br><span class="line"><span class="string">    6</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; add_three_num(3,2,3)</span></span><br><span class="line"><span class="string">    8</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> (a + b + c)</span><br></pre></td></tr></table></figure>
+<p>现在我们使用doctest来看看效果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -m doctest pydoctest.py </span><br><span class="line">$ </span><br></pre></td></tr></table></figure>
+<p>没有任何输出，因为测试pass，不会显示任何信息，可以在脚本命令加上-v来显示所有信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -m doctest pydoctest.py -v</span><br></pre></td></tr></table></figure>
+<p>输出结果为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Trying:</span><br><span class="line">   add_three_num(1,2,3)</span><br><span class="line">Expecting:</span><br><span class="line">   6</span><br><span class="line">ok</span><br><span class="line">Trying:</span><br><span class="line">   add_three_num(3,2,3)</span><br><span class="line">Expecting:</span><br><span class="line">   8</span><br><span class="line">ok</span><br><span class="line">1 items had no tests:</span><br><span class="line">   pydoctest</span><br><span class="line">1 items passed all tests:</span><br><span class="line">  2 tests <span class="keyword">in</span> pydoctest.add_three_num</span><br><span class="line">2 tests <span class="keyword">in</span> 2 items.</span><br><span class="line">2 passed and 0 failed.</span><br><span class="line">Test passed.</span><br></pre></td></tr></table></figure>
+<p>如果我们python程序有误，比如我把最后的return内容改为&#96;return (a + b - c)<br>再来运行一下看看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ python3 -m doctest pydoctest.py</span><br><span class="line">**********************************************************************</span><br><span class="line">File <span class="string">&quot;/home/mao/MyBlog/blog/source/_posts/Python-doctest-post/pydoctest.py&quot;</span>, line 3, <span class="keyword">in</span> pydoctest.add_three_num</span><br><span class="line">Failed example:</span><br><span class="line">    add_three_num(1,2,3)</span><br><span class="line">Expected:</span><br><span class="line">    6</span><br><span class="line">Got:</span><br><span class="line">    0</span><br><span class="line">**********************************************************************</span><br><span class="line">File <span class="string">&quot;/home/mao/MyBlog/blog/source/_posts/Python-doctest-post/pydoctest.py&quot;</span>, line 6, <span class="keyword">in</span> pydoctest.add_three_num</span><br><span class="line">Failed example:</span><br><span class="line">    add_three_num(3,2,3)</span><br><span class="line">Expected:</span><br><span class="line">    8</span><br><span class="line">Got:</span><br><span class="line">    2</span><br><span class="line">**********************************************************************</span><br><span class="line">1 items had failures:</span><br><span class="line">   2 of   2 <span class="keyword">in</span> pydoctest.add_three_num</span><br><span class="line">***Test Failed*** 2 failures.</span><br></pre></td></tr></table></figure>
+<p>可以看到它会提示你出错的文件，与期望不一致的结果，测试pass、fail了几项等等</p>
+<p>如果要doctest的py程序和函数较多，也可以把doctest内容单独编写一个文件，运行doctest.testfile(“example.txt”)来测试，详情可阅读doctest官方文档，有机会的话，我在尝试一下出个blog</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://1allen9.github.io/2025/03/16/python-doctest/" data-id="cm8bkhpsl000108x99h548yu2" data-title="python-doctest" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python-doctest/" rel="tag">python, doctest</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/03/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-doctest/" rel="tag">python, doctest</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python-doctest/" style="font-size: 10px;">python, doctest</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/16/python-doctest/">python-doctest</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
