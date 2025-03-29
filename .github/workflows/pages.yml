@@ -1,6 +1,6 @@
 .github/workflows/pages.yml
 
-name: Pages  
+name: Pages
 
 on:  
   push:  
