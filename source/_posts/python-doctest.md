@@ -1,7 +1,7 @@
 ---
 title: python-doctest
 date: 2025-03-16 18:38:01
-tags: python, doctest
+tags: [python, doctest]
 ---
 # python测试工具——doctest
 ## brief introduction
